@@ -9,7 +9,7 @@ jobs :
     name : Deploy everything to server
     steps: 
       - run : |
-          echo ${{ secrets.SSH_PRIVATE_KEY }} &> ~/ssh_key
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" &> ~/ssh_key
           ssh -i ~/ssh_key azureuser@40.81.228.161
           cd devops-turborepo && git pull
           pnpm install
