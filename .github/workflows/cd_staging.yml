@@ -10,8 +10,10 @@ jobs :
     steps: 
       - run : |
           echo "${{ secrets.SSH_PRIVATE_KEY }}" &> ~/ssh_key
-          mkdir .ssh
+          mkdir ~/.ssh
+          cd ~/.ssh && touch known_hosts
           echo "${{ secrets.KNOWN_HOSTS }}" &> ~/.ssh/known_hosts
+          chmod 700 ~/ssh_key
           ssh -i ~/ssh_key azureuser@40.81.228.161
           cd devops-turborepo && git pull
           pnpm install
