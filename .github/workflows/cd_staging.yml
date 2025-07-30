@@ -11,12 +11,12 @@ jobs :
     steps :
       - name: SSH into server
       - run : |
-              echo ${{ssh,SSH_PRIVATE_KEY}} &> ~/ssh_key
-              ssh -i ~/ssh_key azureuser@40.81.228.161
-              cd devops-turborepo && git pull
-              pnpm install
-              pnpm run build
-              pnpm restart fe-server
-              pnpm restart ws-server
-              pnpm restart http-server
+          echo ${{ secrets.SSH_PRIVATE_KEY }} &> ~/ssh_key
+          ssh -i ~/ssh_key azureuser@40.81.228.161
+          cd devops-turborepo && git pull
+          pnpm install
+          pnpm run build
+          pnpm restart fe-server
+          pnpm restart socket-server
+          pnpm restart http-server
 
