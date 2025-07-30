@@ -1,6 +1,5 @@
 import prisma from "@repo/db/client";
 
-
 const App = async() => {
 
   const res = await prisma.user.findFirst({});
