@@ -4,7 +4,7 @@ import prisma from "@repo/db/client"
 
 const app = express();
 app.use(express.json())
-app.use(cors());
+app.use(cors())
 const PORT = 3000;
 
 app.get('/',(req : Request, res : Response) => {
