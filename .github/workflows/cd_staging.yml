@@ -17,6 +17,7 @@ jobs :
           ssh -i ~/ssh_key azureuser@40.81.228.161 << 'EOF'
             cd ~/devops-turborepo/
             git pull origin main
+            npm i -g pnpm && npm i -g pm2
             pnpm install
             pnpm run build
             pm2 restart fe-server
