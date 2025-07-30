@@ -1,22 +1,21 @@
 name : Deploy to staging
 on: 
   push:
-    branches: 
-      - "main"
+    branches: [ main ]
 
 jobs :
   redeploy_everything:
     name : Deploy everything to server
 
     steps :
-      - name: SSH into server
-      - run : |
-          echo ${{ secrets.SSH_PRIVATE_KEY }} &> ~/ssh_key
-          ssh -i ~/ssh_key azureuser@40.81.228.161
-          cd devops-turborepo && git pull
-          pnpm install
-          pnpm run build
-          pnpm restart fe-server
-          pnpm restart socket-server
-          pnpm restart http-server
+      name: SSH into server
+      run : |
+        echo ${{ secrets.SSH_PRIVATE_KEY }} &> ~/ssh_key
+        ssh -i ~/ssh_key azureuser@40.81.228.161
+        cd devops-turborepo && git pull
+        pnpm install
+        pnpm run build
+        pnpm restart fe-server
+        pnpm restart socket-server
+        pnpm restart http-server
 
