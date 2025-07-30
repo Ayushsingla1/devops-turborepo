@@ -15,10 +15,10 @@ jobs :
           echo "${{ secrets.KNOWN_HOSTS }}" &> ~/.ssh/known_hosts
           chmod 700 ~/ssh_key
           ssh -i ~/ssh_key azureuser@40.81.228.161
-          cd ~/devops-turborepo/ && git pull origin main
-          pnpm install
-          pnpm run build
-          pnpm restart fe-server
-          pnpm restart socket-server
-          pnpm restart http-server
+            cd ~/devops-turborepo/ && git pull origin main
+            pnpm install
+            pnpm run build
+            pnpm restart fe-server
+            pnpm restart socket-server
+            pnpm restart http-server
 
