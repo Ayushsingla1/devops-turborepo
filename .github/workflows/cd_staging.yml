@@ -18,12 +18,11 @@ jobs :
             cd ~/devops-turborepo/
             git pull origin main
             source ~/.bashrc
-            npm i -g pnpm && npm i -g pm2
-            pnpm install
-            pnpm run build
-            pm2 restart fe-server
-            pm2 restart socket-server
-            pm2 restart http-server
+            /home/azureuser/.nvm/versions/node/v24.4.1/bin/pnpm install
+            /home/azureuser/.nvm/versions/node/v24.4.1/bin/pnpm run build
+            /home/azureuser/.nvm/versions/node/v24.4.1/bin/pm2 restart fe-server
+            /home/azureuser/.nvm/versions/node/v24.4.1/bin/pm2 restart socket-server
+            /home/azureuser/.nvm/versions/node/v24.4.1/bin/pm2 restart http-server
           EOF
 
 
