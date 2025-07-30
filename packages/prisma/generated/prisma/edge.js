@@ -123,7 +123,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/Users/ayushsingla/Desktop/dev-ops/packages/prisma/generated/prisma",
+      "value": "/Users/ayushsingla/Desktop/devops-turborepo/packages/prisma/generated/prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -134,15 +134,22 @@ const config = {
         "fromEnvVar": null,
         "value": "darwin-arm64",
         "native": true
+      },
+      {
+        "fromEnvVar": null,
+        "value": "debian-openssl-1.1.x"
+      },
+      {
+        "fromEnvVar": null,
+        "value": "darwin-arm64"
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/Users/ayushsingla/Desktop/dev-ops/packages/prisma/prisma/schema.prisma",
+    "sourceFilePath": "/Users/ayushsingla/Desktop/devops-turborepo/packages/prisma/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": "../../.env",
-    "schemaEnvPath": "../../.env"
+    "rootEnvPath": null
   },
   "relativePath": "../../prisma",
   "clientVersion": "6.9.0",
@@ -160,8 +167,8 @@ const config = {
       }
     }
   },
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel User {\n  id    String @unique @default(uuid())\n  name  String\n  email String\n}\n",
-  "inlineSchemaHash": "ad7556d827a1001f0f81fb44373dc9b3ce59f1d5d93db716bac4d80b97feabd1",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider      = \"prisma-client-js\"\n  output        = \"../generated/prisma\"\n  binaryTargets = [\"native\", \"debian-openssl-1.1.x\", \"darwin-arm64\"]\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel User {\n  id    String @unique @default(uuid())\n  name  String\n  email String\n}\n",
+  "inlineSchemaHash": "eb6b2b9d3db47233a59695da344643fd07d477ed112694b20037570692d2cae0",
   "copyEngine": true
 }
 config.dirname = '/'
