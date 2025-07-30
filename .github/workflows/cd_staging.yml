@@ -19,9 +19,9 @@ jobs :
             git pull origin main
             pnpm install
             pnpm run build
-            pnpm restart fe-server
-            pnpm restart socket-server
-            pnpm restart http-server
+            pm2 restart fe-server
+            pm2 restart socket-server
+            pm2 restart http-server
           EOF
 
 
